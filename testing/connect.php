@@ -1,0 +1,24 @@
+<?php 
+    if($_SERVER['REQUEST_METHOD'] =='POST' && isset($_POST['submit'])){
+        // test1 == database name
+        // users == table name
+        $conn = mysqli_connect('localhost','root','','test1') or die('Connection Failed!' .mysqli_connect_error());
+        if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['phone']) && isset($_POST['bgroup'])){
+            $name = $_POST['name'];
+            $email = $_POST['email'];
+            $phone = $_POST['phone'];
+            $bgroup = $_POST['bgroup'];
+
+            $sql = "INSERT INTO `users` (`name`,`email`,`phone`,`bgroup`)  VALUES ('$name','$email','$phone','$bgroup')";
+
+            $query = mysqli_query($conn,$sql);
+            if($query){
+                echo "Entry Succesful";
+            }else{
+                echo "Error Occured";
+            }
+        }
+    }else{
+        echo "Errorrrr";
+    }
+?>

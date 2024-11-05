@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Checkbox Example</title>
+    <style type="text/css">
+      #myDiv {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <label for="myCheckbox">Show div:</label>
+    <input type="checkbox" id="myCheckbox" onclick="toggleDiv()" />
+
+    <div id="myDiv">
+      This is the div that will be shown when the checkbox is checked.
+    </div>
+
+    <script type="text/javascript">
+      function toggleDiv() {
+        var checkbox = document.getElementById("myCheckbox");
+        var div = document.getElementById("myDiv");
+        if (checkbox.checked == true) {
+          div.style.display = "block";
+        } else {
+          div.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>
